@@ -1,4 +1,5 @@
 import os
+import config
 from langchain.llms import OpenAI
 import streamlit as st
 from langchain.document_loaders import PyPDFLoader
@@ -11,22 +12,21 @@ from langchain.agents.agent_toolkits import (
 
 # Set APIkey for OpenAI Service
 # Can sub this out for other LLM providers
-os.environ["OPENAI_API_KEY"] = ""
+os.environ["OPENAI_API_KEY"] = config.OPENAI_API_KEY
 
 # Create instance of OpenAI LLM
 llm = OpenAI(temperature=0.1, verbose=True)
 
-# Create and load PDF Loader
+# Create and load PDF Loader, split pdf pages,
+# and Load documents into vector database aka ChromaDB
 loader = PyPDFLoader("annualreport.pdf")
-# Split pages from pdf
 pages = loader.load_and_split()
-# Load documents into vector database aka ChromaDB
 store = Chroma.from_documents(pages, collection_name="annualreport")
 
 # Create vectorstore info object - metadata repo?
 vectorstore_info = VectorStoreInfo(
     name="annual_report",
-    description="a banking annual report as a pdf",
+    description="a financial report as a pdf",
     vectorstore=store,
 )
 # Convert the document store into a langchain toolkit

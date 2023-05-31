@@ -8,7 +8,7 @@ This project highlights how to leverage a ChromaDB vectorstore in a Langchain pi
 3. Clone this repo
 4. Go into the directory
 5. Install the required dependencies `pip install -r requirements.txt`
-6. Add your OpenAI APIKey to line 22 of `app.py`
+6. Add your OpenAI APIKey to line 15 of `app.py`, or create a config file and add it there.
 7. Start the app `streamlit run app.py`  
 
 # Other References 🔗
