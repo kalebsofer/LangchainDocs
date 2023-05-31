@@ -4,7 +4,7 @@ This project highlights how to leverage a ChromaDB vectorstore in a Langchain pi
 # Startup 🚀
 1. Create a virtual environment `python -m venv env`
 2. Activate it: 
-   - Mac: `source langchain/bin/activate`
+   - Mac: `source env/bin/activate`
 3. Clone this repo
 4. Go into the directory
 5. Install the required dependencies `pip install -r requirements.txt`
