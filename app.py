@@ -34,7 +34,7 @@ toolkit = VectorStoreToolkit(vectorstore_info=vectorstore_info)
 
 # Add the toolkit to an end-to-end LC
 agent_executor = create_vectorstore_agent(llm=llm, toolkit=toolkit, verbose=True)
-st.title("🦜🔗 GPT Investment Banker")
+st.title("🦜🔗 GPT PDF Interpreter")
 # Create a text input box for the user
 prompt = st.text_input("Input your prompt here")
 
